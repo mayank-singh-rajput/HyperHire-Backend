@@ -4,7 +4,7 @@ import { AuthenticationMiddleware } from './middleware/authentication.check';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  
+
   app.setGlobalPrefix('api');
   app.use(new AuthenticationMiddleware().use);
 

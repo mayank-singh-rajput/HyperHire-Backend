@@ -1,5 +1,5 @@
-import { Body, Controller, Post } from '@nestjs/common'
-import { UserService } from './user.service'
+import { Body, Controller, Post } from '@nestjs/common';
+import { UserService } from './user.service';
 import { CreateUser } from './interfaces/create.interface';
 
 @Controller('users')

@@ -27,7 +27,7 @@ export class FolderService {
         name: true,
         parentId: true,
         userId: true,
-      }
+      },
     });
   }
 }

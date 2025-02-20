@@ -8,7 +8,7 @@ export class FolderController {
   constructor(private readonly folderService: FolderService) {}
 
   @Post()
-  CreateFolder(@Body() data: CreateFolder) {    
+  CreateFolder(@Body() data: CreateFolder) {
     return this.folderService.CreateFolder(data);
   }
 
