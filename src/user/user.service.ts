@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { User } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateUser } from './interfaces/create.interface';
 
@@ -7,7 +6,7 @@ import { CreateUser } from './interfaces/create.interface';
 export class UserService {
   constructor(private prisma: PrismaService) {}
 
-  async User(data: CreateUser): Promise<User> {
+  async User(data: CreateUser) {
     let user = await this.prisma.user.findFirst({
       where: { email: data.email },
     });

@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { Folder } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateFolder } from './interfaces/create.interface';
 import { FetchFolder } from './interfaces/fetch.interface';
@@ -8,7 +7,7 @@ import { FetchFolder } from './interfaces/fetch.interface';
 export class FolderService {
   constructor(private prisma: PrismaService) {}
 
-  async CreateFolder(data: CreateFolder): Promise<Folder> {
+  async CreateFolder(data: CreateFolder) {
     return this.prisma.folder.create({
       data: {
         id: data.id,
@@ -19,7 +18,7 @@ export class FolderService {
     });
   }
 
-  async FetchFolder(data: FetchFolder): Promise<Folder[]> {
+  async FetchFolder(data: FetchFolder) {
     return this.prisma.folder.findMany({
       where: { userId: data.user },
       select: {
